@@ -37,20 +37,22 @@ class Form extends React.Component {
 
   render() {
     return (
-      <div className="card mx-auto">
-        <h4 className="card-title">Search for GitHub User</h4>
-        <div className="card-body">
-          <form onSubmit={this.handleSubmit}>
+      <div className="mt-3">
+        <form onSubmit={this.handleSubmit}>
+          <div className="input-group mb-3 col-lg-6">
             <input 
               type="text" 
+              className="form-control"
               placeholder="GitHub username" 
               value={this.state.username} 
               onChange={event => this.setState({ username: event.target.value })}
               required
             />
-            <button>Add Card</button>
-          </form>
-        </div>
+            <div className="input-group-append">
+              <button class="input-group-text">Add Card</button>
+            </div>
+          </div>
+        </form>
       </div>
     );
   }
@@ -70,8 +72,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="header">{this.props.title}</div>
+      <div className="container">
+        <h3 className="pb-3 mt-4 mb-2 border-bottom text-center">{this.props.title}</h3>
         <Form onSubmit={this.addNewProfile} />
         <CardList profiles={this.state.profiles} />
       </div>
