@@ -16,7 +16,9 @@ class Card extends React.Component {
       <div style={{margin: '1rem'}}>
         <img alt="profile" style={{width: '75px'}} src={profile.avatar_url} />
         <div style={{display: 'inline-block', marginLeft: 10, verticalAlign: 'top'}}>
-          <div style={{fontSize: '1.25rem', fontWeight: 'bold'}}>{profile.name}</div>
+          <div style={{fontSize: '1.25rem', fontWeight: 'bold'}}>
+            <a href={profile.html_url} target="_open" alt="click to go to user profile">{profile.name}</a>
+          </div>
           <div className="company">{profile.company}</div>
         </div>
       </div>
@@ -49,7 +51,7 @@ class Form extends React.Component {
               required
             />
             <div className="input-group-append">
-              <button class="input-group-text">Add Card</button>
+              <button className="input-group-text">Add Card</button>
             </div>
           </div>
         </form>
